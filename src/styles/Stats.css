@@ -1,43 +1,76 @@
 .stats {
-  background: var(--color-stat-bg);
-  padding: clamp(1.5rem, 1rem + 1.5vw, 3rem) 0;
+  background: var(--color-white);
+  padding-top: clamp(1rem, 0.5rem + 1vw, 2rem);
+  padding-bottom: clamp(4rem, 3rem + 3vw, 7rem);
 }
 
-.stats .container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-lg);
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 0.8rem + 0.8vw, 2rem);
+  width: 100%;
 }
 
 .stats__card {
-  text-align: center;
-  flex: 1;
-  flex-basis: clamp(8rem, 20%, 14rem);
-  min-width: min(40%, 10rem);
-  padding: var(--space-md);
+  background: #f9fafb;
+  border: 0.0625rem solid #f3f4f6;
+  border-radius: 0.5rem;
+  padding: clamp(1.5rem, 1.2rem + 1vw, 2.25rem) clamp(1.25rem, 1rem + 0.8vw, 1.85rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.stats__number {
-  font-family: var(--font-heading);
-  font-size: var(--fs-2xl);
-  font-weight: 700;
+.stats__card:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.05);
+}
+
+.stats__icon-box {
+  width: clamp(2.5rem, 2.2rem + 0.6vw, 3rem);
+  height: clamp(2.5rem, 2.2rem + 0.6vw, 3rem);
+  background: #1d4ed8;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(1.25rem, 1rem + 0.6vw, 1.75rem);
+  flex-shrink: 0;
+}
+
+.stats__icon-svg {
+  width: clamp(1.25rem, 1.1rem + 0.3vw, 1.5rem);
+  height: clamp(1.25rem, 1.1rem + 0.3vw, 1.5rem);
   color: var(--color-white);
 }
 
-.stats__label {
-  font-size: var(--fs-sm);
-  color: rgba(255, 255, 255, 0.75);
-  margin-top: var(--space-xs);
+.stats__number {
+  font-family: var(--font-primary);
+  font-size: clamp(1.4rem, 1.15rem + 0.7vw, 1.85rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.2;
+  margin-bottom: clamp(0.35rem, 0.25rem + 0.2vw, 0.5rem);
 }
 
-@media (max-width: 48rem) {
-  .stats .container {
-    justify-content: center;
-  }
+.stats__label {
+  font-size: clamp(0.8rem, 0.75rem + 0.15vw, 0.9rem);
+  color: #6b7280;
+  line-height: 1.5;
+  font-weight: 400;
+}
 
-  .stats__card {
-    flex-basis: 40%;
+/* Media Queries - Layout Changes Only */
+@media (max-width: 64rem) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 32rem) {
+  .stats__grid {
+    grid-template-columns: 1fr;
   }
 }

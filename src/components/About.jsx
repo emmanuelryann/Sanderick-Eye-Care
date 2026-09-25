@@ -5,24 +5,23 @@ const About = () => {
     <section className="section about" id="about">
       <div className="container">
         <div className="about__content">
-          <div className="about__image">
+          <div className="about__image-col">
             <img
-              src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?auto=format&fit=crop&w=800&q=80"
-              alt="Eye care professional examining a patient"
+              className="about__img"
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=85"
+              alt="Woman with sunlight shadows on her face and eyes"
             />
           </div>
-          <div className="about__text">
-            <h2>Your trusted partner in eye health</h2>
-            <p>
-              With over 15 years of experience, OptiClear has been at the forefront
-              of eye care innovation. Our team of board-certified ophthalmologists
-              and optometrists combines cutting-edge technology with a patient-first
-              approach to deliver exceptional results.
-            </p>
-            <p>
-              We believe everyone deserves clear, comfortable vision. From routine
-              check-ups to complex surgical procedures, we provide comprehensive
-              care tailored to your unique needs.
+          <div className="about__text-col">
+            <h2 className="about__title">
+              Your trusted partner
+              <br />
+              in eye health
+            </h2>
+            <p className="about__description">
+              Our state-of-the-art eye clinic offers personalized care for all ages. From routine eye
+              exams to advanced surgical procedures, our team of experienced ophthalmologists and
+              optometrists is here to ensure your vision stays sharp and healthy.
             </p>
           </div>
         </div>
