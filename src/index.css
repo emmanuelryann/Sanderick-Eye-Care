@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --color-primary: #1a1f71;
+  --color-primary-light: #2a3190;
+  --color-accent: #3b5bdb;
+  --color-accent-light: #e8edff;
+  --color-dark: #111827;
+  --color-text: #374151;
+  --color-text-light: #6b7280;
+  --color-text-lighter: #9ca3af;
+  --color-white: #ffffff;
+  --color-bg: #ffffff;
+  --color-bg-light: #f9fafb;
+  --color-bg-gray: #f3f4f6;
+  --color-border: #e5e7eb;
+  --color-border-light: #f0f0f0;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-stat-bg: #1e3a5f;
+
+  /* Font Families */
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+
+  /* Font Sizes – all clamp */
+  --fs-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --fs-sm: clamp(0.8rem, 0.75rem + 0.3vw, 0.9rem);
+  --fs-base: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --fs-md: clamp(1rem, 0.9rem + 0.5vw, 1.15rem);
+  --fs-lg: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
+  --fs-xl: clamp(1.3rem, 1.1rem + 0.8vw, 1.75rem);
+  --fs-2xl: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+  --fs-3xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --fs-4xl: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+
+  /* Spacing – all clamp */
+  --space-xs: clamp(0.25rem, 0.2rem + 0.2vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+  --space-md: clamp(0.75rem, 0.6rem + 0.6vw, 1.25rem);
+  --space-lg: clamp(1rem, 0.8rem + 0.8vw, 1.75rem);
+  --space-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2.5rem);
+  --space-2xl: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  --space-3xl: clamp(3rem, 2rem + 3vw, 5rem);
+  --space-4xl: clamp(4rem, 3rem + 4vw, 7rem);
+
+  /* Section Padding */
+  --section-padding-y: clamp(3rem, 2.5rem + 3vw, 6rem);
+  --section-padding-x: clamp(1rem, 0.5rem + 4vw, 8rem);
+  --container-max: min(100%, 75rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  background: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.container {
+  width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+.section {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+/* Utility */
+.sr-only {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
