@@ -1,5 +1,32 @@
 import '../styles/Hero.css';
 
+const reviewAvatars = [
+  {
+    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80',
+    alt: 'OptiClear patient'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80',
+    alt: 'OptiClear patient'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80',
+    alt: 'OptiClear patient'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80',
+    alt: 'OptiClear patient'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&h=120&q=80',
+    alt: 'OptiClear patient'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&h=120&q=80',
+    alt: 'OptiClear patient'
+  },
+];
+
 const Hero = () => {
   const handleCta = (e) => {
     e.preventDefault();
@@ -13,35 +40,45 @@ const Hero = () => {
     <section className="hero" id="home">
       <img
         className="hero__bg"
-        src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1920&q=80"
-        alt="Close up of human eyes"
+        src="https://images.unsplash.com/photo-1544435253-f0ead49638da?auto=format&fit=crop&w=2000&q=85"
+        alt="Macro close up of eyes looking directly forward"
       />
       <div className="hero__overlay"></div>
 
       <div className="hero__content">
         <h1 className="hero__title">
-          Experience the clarity of exceptional eye care
+          Experience the clarity of
+          <br />
+          exceptional eye care
         </h1>
         <p className="hero__subtitle">
-          Advanced technology meets compassionate care. Our expert ophthalmologists
-          provide personalized treatment plans for your complete eye health.
+          Transform your vision with advanced treatments and compassionate care
+          tailored to your needs.
         </p>
-        <a href="#contact" className="hero__cta" onClick={handleCta}>
-          Book a consultation
-        </a>
-      </div>
-
-      <div className="hero__trust">
-        <div className="hero__trust-item">
-          <span className="hero__trust-stars">★★★★★</span>
-          <span>Rated 4.9/5</span>
+        <div className="hero__cta-wrapper">
+          <a href="#contact" className="hero__cta" onClick={handleCta}>
+            Book a schedule
+          </a>
         </div>
-        <div className="hero__trust-divider"></div>
-        <div className="hero__trust-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          </svg>
-          <span>TRUSTED PROVIDER</span>
+
+        <div className="hero__reviews">
+          <div className="hero__avatars">
+            {reviewAvatars.map((avatar, idx) => (
+              <img
+                key={idx}
+                src={avatar.src}
+                alt={avatar.alt}
+                className="hero__avatar-img"
+              />
+            ))}
+          </div>
+          <div className="hero__rating-info">
+            <div className="hero__rating-top">
+              <span className="hero__stars">★★★★★</span>
+              <span className="hero__score">4.8</span>
+            </div>
+            <span className="hero__reviews-count">From 1500+ reviews</span>
+          </div>
         </div>
       </div>
     </section>
