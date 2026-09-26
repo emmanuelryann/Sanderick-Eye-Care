@@ -3,33 +3,27 @@ import '../styles/Services.css';
 const servicesData = [
   {
     name: 'Routine eye exams',
-    description:
-      'Complete vision and eye health evaluations with state-of-the-art diagnostic equipment.',
+    description: 'Keep your vision in check with regular eye health evaluations.',
   },
   {
     name: 'Pediatric eye care',
-    description:
-      'Specialized eye care for children, ensuring healthy visual development from an early age.',
+    description: 'Special care for our young patients, ensuring healthy vision development.',
   },
   {
     name: 'Contact lens fitting',
-    description:
-      'Expert fitting and prescription for all types of contact lenses, including specialty lenses.',
+    description: 'Expert guidance for a perfect fit and comfortable wear.',
   },
   {
     name: 'Cataract treatment',
-    description:
-      'Advanced cataract surgery with premium intraocular lens options for optimal visual outcomes.',
+    description: 'State-of-the-art technology to correct vision problems.',
   },
   {
     name: 'Glaucoma management',
-    description:
-      'Comprehensive glaucoma detection, monitoring, and treatment to preserve your vision.',
+    description: 'Advanced solutions for restoring clear vision.',
   },
   {
     name: 'Laser eye surgery',
-    description:
-      'State-of-the-art LASIK and PRK procedures for freedom from glasses and contacts.',
+    description: 'Early detection and effective treatments to preserve eyesight.',
   },
 ];
 
@@ -38,10 +32,13 @@ const Services = () => {
     <section className="section services" id="services">
       <div className="container">
         <div className="services__header">
-          <h2>Comprehensive eye care services</h2>
-          <p>
-            From preventive care to advanced surgical treatments, our expert team
-            provides a full spectrum of eye care services.
+          <h2 className="services__title">
+            Comprehensive eye
+            <br />
+            care services
+          </h2>
+          <p className="services__subtitle">
+            From routine check-ups to advanced procedures, we provide comprehensive solutions for your eye health.
           </p>
         </div>
         <div className="services__list">
@@ -49,7 +46,22 @@ const Services = () => {
             <div className="services__item" key={index}>
               <span className="services__name">{service.name}</span>
               <span className="services__desc">{service.description}</span>
-              <span className="services__arrow">→</span>
+              <div className="services__action">
+                <div className="services__arrow-btn" aria-hidden="true">
+                  <svg
+                    className="services__arrow-svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </div>
+              </div>
             </div>
           ))}
         </div>
