@@ -3,43 +3,41 @@ import '../styles/Excellence.css';
 const features = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      <svg className="excellence__icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+      </svg>
+    ),
+    title: 'Experienced Team',
+    description: 'Trusted professionals with years of expertise.',
+  },
+  {
+    icon: (
+      <svg className="excellence__icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z" />
+        <path d="M18.5 15.5L19.3 18.2L22 19L19.3 19.8L18.5 22.5L17.7 19.8L15 19L17.7 18.2L18.5 15.5Z" />
       </svg>
     ),
     title: 'Advanced Technology',
-    description: 'Cutting-edge diagnostic and treatment equipment for precise, effective care.',
+    description: 'Cutting-edge diagnostic and treatment equipment.',
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      <svg className="excellence__icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="7" r="3.5" />
+        <path d="M12 12.5C8.41 12.5 5.5 15.19 5.5 18.5V19.5H18.5V18.5C18.5 15.19 15.59 12.5 12 12.5Z" />
       </svg>
     ),
     title: 'Patient-Centered Care',
-    description: 'Personalized treatment plans designed around your unique needs and lifestyle.',
+    description: 'We listen, understand, and provide tailored solutions.',
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      <svg className="excellence__icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
       </svg>
     ),
-    title: 'Active Continuity Care',
-    description: 'Ongoing monitoring and follow-up to ensure lasting results and eye health.',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
-    ),
-    title: 'Convenient Locations',
-    description: 'Multiple accessible locations with flexible scheduling to fit your life.',
+    title: 'Convenient Location',
+    description: 'Easily accessible with ample parking space.',
   },
 ];
 
@@ -48,24 +46,29 @@ const Excellence = () => {
     <section className="section excellence" id="excellence">
       <div className="container">
         <div className="excellence__content">
-          <div className="excellence__text">
-            <h2>Excellence in eye care</h2>
-            <p>
-              At OptiClear, we are committed to delivering the highest standard of
-              eye care through innovation, expertise, and a deeply personal
-              approach to every patient.
+          <div className="excellence__text-col">
+            <h2 className="excellence__title">Excellence in eye care</h2>
+            <p className="excellence__description">
+              Discover what makes us the trusted choice for thousands of patients seeking exceptional eye care.
             </p>
-            <a href="#services" className="excellence__cta" onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-            }}>
+            <a
+              href="#services"
+              className="excellence__cta"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Learn more
             </a>
           </div>
-          <div className="excellence__grid">
+
+          <div className="excellence__cards-col">
             {features.map((feature, index) => (
               <div className="excellence__card" key={index}>
-                <div className="excellence__icon">{feature.icon}</div>
+                <div className="excellence__icon-box">
+                  {feature.icon}
+                </div>
                 <h3 className="excellence__card-title">{feature.title}</h3>
                 <p className="excellence__card-desc">{feature.description}</p>
               </div>
