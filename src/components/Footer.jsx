@@ -9,65 +9,62 @@ const Footer = () => {
     }
   };
 
+  const navLinks = [
+    { label: 'Home', id: 'home' },
+    { label: 'About Us', id: 'about' },
+    { label: 'Services', id: 'services' },
+    { label: 'Blog', id: 'blog' },
+  ];
+
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer__top">
-          <div className="footer__brand">
-            <a
-              href="#home"
-              className="footer__logo"
-              onClick={(e) => handleNavClick(e, 'home')}
+        <div className="footer__main">
+          <a
+            href="#home"
+            className="footer__logo"
+            onClick={(e) => handleNavClick(e, 'home')}
+          >
+            <svg
+              className="footer__logo-icon"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                className="footer__logo-icon"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="16" cy="16" r="14" stroke="#1a1f71" strokeWidth="2" fill="#e8edff" />
-                <circle cx="16" cy="16" r="7" fill="#1a1f71" />
-                <circle cx="16" cy="16" r="3" fill="#e8edff" />
-              </svg>
-              <span>OptiClear</span>
-            </a>
-            <p className="footer__tagline">
-              Your trusted partner for comprehensive eye care and vision solutions.
-            </p>
-          </div>
+              <circle cx="18" cy="18" r="18" fill="#1d4ed8" />
+              <path
+                d="M18 10C12 10 7.5 15 6 18C7.5 21 12 26 18 26C24 26 28.5 21 30 18C28.5 15 24 10 18 10ZM18 23C15.24 23 13 20.76 13 18C13 15.24 15.24 13 18 13C20.76 13 23 15.24 23 18C23 20.76 20.76 23 18 23Z"
+                fill="#ffffff"
+              />
+              <circle cx="18" cy="18" r="3" fill="#1d4ed8" />
+            </svg>
+            <span className="footer__logo-text">OptiClear</span>
+          </a>
 
-          <div className="footer__links-group">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-              <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a></li>
-              <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
-              <li><a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')}>Testimonials</a></li>
-            </ul>
-          </div>
+          <p className="footer__tagline">
+            OptiClear is dedicated to providing exceptional eye care for patients of all ages.
+          </p>
 
-          <div className="footer__links-group">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#blog" onClick={(e) => handleNavClick(e, 'blog')}>Blog</a></li>
-              <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
-              <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')}>Eye Exams</a></li>
-              <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')}>LASIK</a></li>
-            </ul>
-          </div>
-
-          <div className="footer__links-group">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="#home">Privacy Policy</a></li>
-              <li><a href="#home">Terms of Service</a></li>
-              <li><a href="#home">Accessibility</a></li>
-            </ul>
-          </div>
+          <ul className="footer__links">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <a href={`#${link.id}`} onClick={(e) => handleNavClick(e, link.id)}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; Copyright 2026 OptiClear. All rights reserved.</p>
+          <span className="footer__copyright">
+            &copy; Landingplay 2024. All right reserved.
+          </span>
+          <div className="footer__legal">
+            <a href="#home">Privacy Policy</a>
+            <span className="footer__legal-dot">&bull;</span>
+            <a href="#home">Terms &amp; Conditions</a>
+          </div>
         </div>
       </div>
     </footer>
