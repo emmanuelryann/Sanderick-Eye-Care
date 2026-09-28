@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../styles/Navbar.css';
+import logo from '../assets/sec_logo2.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +72,7 @@ const Navbar = () => {
           className="navbar__logo"
           onClick={(e) => handleNavClick(e, 'home')}
         >
-          <svg
+          {/* <svg
             className="navbar__logo-icon"
             viewBox="0 0 36 36"
             fill="none"
@@ -83,8 +84,9 @@ const Navbar = () => {
               fill="#111827"
             />
             <circle cx="18" cy="18" r="3" fill="#ffffff" />
-          </svg>
-          <span className="navbar__logo-text">OptiClear</span>
+          </svg> */}
+          <img src={logo} className="navbar__logo-icon"/>
+          {/* <span className="navbar__logo-text">Sanderick</span> */}
         </a>
 
         <ul className="navbar__links">
@@ -162,7 +164,7 @@ const Navbar = () => {
               />
               <circle cx="18" cy="18" r="3" fill="#111827" />
             </svg>
-            <span className="navbar__sidebar-logo-text">OptiClear</span>
+            <span className="navbar__sidebar-logo-text">Sanderick</span>
           </div>
           <button
             className="navbar__sidebar-close"

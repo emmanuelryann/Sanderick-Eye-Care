@@ -1,4 +1,5 @@
 import '../styles/Footer.css';
+import logo from '../assets/sec_logo2.png';
 
 const Footer = () => {
   const handleNavClick = (e, sectionId) => {
@@ -25,7 +26,7 @@ const Footer = () => {
             className="footer__logo"
             onClick={(e) => handleNavClick(e, 'home')}
           >
-            <svg
+            {/* <svg
               className="footer__logo-icon"
               viewBox="0 0 36 36"
               fill="none"
@@ -37,12 +38,13 @@ const Footer = () => {
                 fill="#ffffff"
               />
               <circle cx="18" cy="18" r="3" fill="var(--color-primary)" />
-            </svg>
-            <span className="footer__logo-text">OptiClear</span>
+            </svg> */}
+            <img src={logo} className="footer__logo-icon"/>
+            <span className="footer__logo-text">Sanderick</span>
           </a>
 
           <p className="footer__tagline">
-            OptiClear is dedicated to providing exceptional eye care for patients of all ages.
+            Sanderick is dedicated to providing exceptional eye care for patients of all ages.
           </p>
 
           <ul className="footer__links">
@@ -58,7 +60,7 @@ const Footer = () => {
 
         <div className="footer__bottom">
           <span className="footer__copyright">
-            &copy; Landingplay 2024. All right reserved.
+            &copy; Sanderick Eye Care 2026. All right reserved.
           </span>
           <div className="footer__legal">
             <a href="#home">Privacy Policy</a>

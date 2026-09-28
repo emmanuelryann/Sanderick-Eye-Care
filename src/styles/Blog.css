@@ -116,8 +116,8 @@
 
 .blog__explore-btn {
   background: transparent;
-  border: 0.0625rem solid #e5e7eb;
-  border-radius: 9999rem;
+  border: 0.0625rem solid #dddddd;
+  border-radius: 100rem;
   padding: clamp(0.7rem, 1.1vw, 0.9rem) clamp(1.5rem, 0.9vw, 2.6rem);
   font-size: clamp(0.825rem, 0.78rem + 0.15vw, 0.9rem);
   color: #374151;

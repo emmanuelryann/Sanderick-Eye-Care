@@ -75,7 +75,7 @@
 
 .footer__copyright {
   font-size: clamp(0.75rem, 0.7rem + 0.1vw, 0.825rem);
-  color: #9ca3af;
+  color: var(--color-dark);
 }
 
 .footer__legal {
@@ -83,11 +83,11 @@
   align-items: center;
   gap: 0.5rem;
   font-size: clamp(0.75rem, 0.7rem + 0.1vw, 0.825rem);
-  color: #9ca3af;
+  color: var(--color-dark);
 }
 
 .footer__legal a {
-  color: #9ca3af;
+  color: var(--color-dark);
   transition: color 0.2s ease;
 }
 

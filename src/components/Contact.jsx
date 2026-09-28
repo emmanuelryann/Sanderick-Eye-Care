@@ -82,7 +82,7 @@ const Contact = () => {
               viewBox="0 0 600 500"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              aria-label="Map of OptiClear office location on Eastwood Ave and Ashwood Ave"
+              aria-label="Map of Sanderick office location on Eastwood Ave and Ashwood Ave"
             >
               {/* Background Map Canvas */}
               <rect width="600" height="500" fill="#f4f5f7" />

@@ -62,8 +62,8 @@
 }
 
 .testimonials__nav-arrow:hover {
-  background: #111827;
-  border-color: #111827;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
   color: var(--color-white);
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
 }
