@@ -31,12 +31,12 @@ const Footer = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="18" cy="18" r="18" fill="#1d4ed8" />
+              <circle cx="18" cy="18" r="18" fill="var(--color-primary)" />
               <path
                 d="M18 10C12 10 7.5 15 6 18C7.5 21 12 26 18 26C24 26 28.5 21 30 18C28.5 15 24 10 18 10ZM18 23C15.24 23 13 20.76 13 18C13 15.24 15.24 13 18 13C20.76 13 23 15.24 23 18C23 20.76 20.76 23 18 23Z"
                 fill="#ffffff"
               />
-              <circle cx="18" cy="18" r="3" fill="#1d4ed8" />
+              <circle cx="18" cy="18" r="3" fill="var(--color-primary)" />
             </svg>
             <span className="footer__logo-text">OptiClear</span>
           </a>

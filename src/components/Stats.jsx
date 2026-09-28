@@ -36,7 +36,7 @@ const statsData = [
         <circle cx="12" cy="12" r="9" fill="#ffffff" />
         <path
           d="M8.5 12L11 14.5L15.5 9.5"
-          stroke="#1d4ed8"
+          stroke="var(--color-primary)"
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"

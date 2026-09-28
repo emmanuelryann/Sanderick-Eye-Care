@@ -11,8 +11,8 @@
 
 .blog__title {
   font-family: var(--font-primary);
-  font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 2.6vw, 4.5rem);
+  font-weight: 500;
   line-height: 1.2;
   color: var(--color-dark);
   margin-bottom: clamp(0.5rem, 0.4rem + 0.3vw, 0.85rem);
@@ -75,8 +75,8 @@
 
 .blog__card-title {
   font-family: var(--font-primary);
-  font-size: clamp(0.925rem, 0.85rem + 0.2vw, 1.05rem);
-  font-weight: 600;
+  font-size: clamp(0.8rem, 1.1vw, 1.05rem);
+  font-weight: 500;
   color: var(--color-dark);
   line-height: 1.4;
   margin-top: clamp(0.75rem, 0.6rem + 0.3vw, 1rem);
@@ -87,16 +87,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: #1d4ed8;
+  color: var(--color-primary);
   font-size: clamp(0.8rem, 0.75rem + 0.12vw, 0.875rem);
   font-weight: 500;
   text-decoration: none;
-  transition: gap 0.2s ease, color 0.2s ease;
+  transition: gap 0.2s ease, opacity 0.2s ease;
   margin-top: auto;
 }
 
 .blog__card:hover .blog__read-more {
-  color: #1e40af;
+  opacity: 0.85;
   gap: 0.5rem;
 }
 
@@ -118,7 +118,7 @@
   background: transparent;
   border: 0.0625rem solid #e5e7eb;
   border-radius: 9999rem;
-  padding: clamp(0.55rem, 0.45rem + 0.2vw, 0.75rem) clamp(1.4rem, 1.1rem + 0.5vw, 1.85rem);
+  padding: clamp(0.7rem, 1.1vw, 0.9rem) clamp(1.5rem, 0.9vw, 2.6rem);
   font-size: clamp(0.825rem, 0.78rem + 0.15vw, 0.9rem);
   color: #374151;
   font-weight: 500;
@@ -127,9 +127,9 @@
 }
 
 .blog__explore-btn:hover {
-  background: #f9fafb;
-  border-color: #d1d5db;
-  color: var(--color-dark);
+  background: #000;
+  /* border-color: #d1d5db; */
+  color: #fff;
 }
 
 /* Responsive Media Queries - Layout Changes Only */

@@ -16,8 +16,8 @@
 
 .services__title {
   font-family: var(--font-primary);
-  font-size: clamp(2rem, 1.5rem + 2.2vw, 3.4rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 3vw, 4.5rem);
+  font-weight: 500;
   line-height: 1.15;
   color: var(--color-dark);
   margin-bottom: clamp(0.75rem, 0.5rem + 0.4vw, 1.25rem);
@@ -51,7 +51,7 @@
 
 .services__name {
   font-family: var(--font-primary);
-  font-size: clamp(1.15rem, 1rem + 0.3vw, 1.35rem);
+  font-size: clamp(1.15rem, 0.3vw, 1.35rem);
   font-weight: 600;
   color: var(--color-dark);
   flex-shrink: 0;
@@ -94,8 +94,8 @@
 }
 
 .services__item:hover .services__arrow-btn {
-  border-color: #111827;
-  background: #111827;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
   color: var(--color-white);
 }
 

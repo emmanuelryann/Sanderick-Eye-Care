@@ -20,8 +20,8 @@
 
 .contact__title {
   font-family: var(--font-primary);
-  font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 2.6vw, 4.5rem);
+  font-weight: 500;
   line-height: 1.18;
   color: var(--color-dark);
   margin-bottom: clamp(0.75rem, 0.5rem + 0.4vw, 1.25rem);
@@ -121,16 +121,16 @@
 }
 
 .contact__btn--primary {
-  background: #1d4ed8;
+  background: var(--color-primary);
   color: var(--color-white);
   font-weight: 600;
-  box-shadow: 0 0.125rem 0.5rem rgba(29, 78, 216, 0.2);
+  box-shadow: 0 0.125rem 0.5rem color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .contact__btn--primary:hover {
   opacity: 0.93;
   transform: translateY(-0.0625rem);
-  box-shadow: 0 0.25rem 0.75rem rgba(29, 78, 216, 0.3);
+  box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, var(--color-primary) 35%, transparent);
 }
 
 .contact__btn--secondary {

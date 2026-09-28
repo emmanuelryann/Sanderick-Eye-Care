@@ -59,7 +59,7 @@
 }
 
 .footer__links a:hover {
-  color: #1d4ed8;
+  color: var(--color-primary);
 }
 
 /* Bottom Bar */
