@@ -61,7 +61,7 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="hero__reviews">
+        {/* <div className="hero__reviews">
           <div className="hero__avatars">
             {reviewAvatars.map((avatar, idx) => (
               <img
@@ -79,7 +79,7 @@ const Hero = () => {
             </div>
             <span className="hero__reviews-count">From 1500+ reviews</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
