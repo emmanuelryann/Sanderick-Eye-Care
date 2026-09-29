@@ -1,4 +1,5 @@
 import '../styles/About.css';
+import aboutImage from '../assets/sanderick_about.avif';
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
           <div className="about__image-col">
             <img
               className="about__img"
-              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=85"
+              src={aboutImage}
               alt="Woman with sunlight shadows on her face and eyes"
             />
           </div>

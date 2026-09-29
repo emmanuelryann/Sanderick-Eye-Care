@@ -50,7 +50,7 @@
 .blog__image-wrapper {
   width: 100%;
   overflow: hidden;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
 }
 
 .blog__img {
@@ -59,7 +59,7 @@
   aspect-ratio: 1 / 0.95;
   object-fit: cover;
   display: block;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
   transition: transform 0.3s ease;
 }
 

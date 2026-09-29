@@ -6,7 +6,7 @@
   z-index: 1000;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
   transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-  padding: clamp(1rem, 0.8rem + 0.6vw, 1.6rem) clamp(1.5rem, 1rem + 3vw, 5rem);
+  padding: clamp(0.45rem, 0.35rem + 0.3vw, 0.75rem) clamp(1.5rem, 1rem + 3vw, 5rem);
 }
 
 .navbar--scrolled {
@@ -31,16 +31,21 @@
   gap: 0.625rem;
   cursor: pointer;
   flex-shrink: 0;
+  height: clamp(2.5rem, 2.2rem + 0.6vw, 3rem);
 }
 
 .navbar__logo-icon {
-  width: clamp(1.75rem, 2.6vw, 3.2rem);
-  height: clamp(1.75rem, 2.6vw, 3.2rem);
+  width: auto;
+  height: clamp(3.5rem, 3rem + 1.8vw, 4.85rem);
+  object-fit: contain;
+  margin-top: calc(-1 * clamp(0.5rem, 0.4rem + 0.4vw, 0.9rem));
+  margin-bottom: calc(-1 * clamp(0.5rem, 0.4rem + 0.4vw, 0.9rem));
 }
 
-.navbar__logo-icon--dark {
-  width: clamp(1.75rem, 1.5rem + 0.6vw, 2.25rem);
-  height: clamp(1.75rem, 1.5rem + 0.6vw, 2.25rem);
+.navbar__sidebar-logo-img {
+  width: auto;
+  height: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
+  object-fit: contain;
 }
 
 .navbar__logo-text {

@@ -4,9 +4,21 @@ import logo from '../assets/sec_logo2.png';
 const Footer = () => {
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const navbar = document.querySelector('.navbar');
+      const navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
+      const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      const extraGap = 1.5 * rootFontSize;
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: Math.max(0, sectionTop - navHeight - extraGap),
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -40,11 +52,11 @@ const Footer = () => {
               <circle cx="18" cy="18" r="3" fill="var(--color-primary)" />
             </svg> */}
             <img src={logo} className="footer__logo-icon"/>
-            <span className="footer__logo-text">Sanderick</span>
+            {/* <span className="footer__logo-text">Sanderick Eye Care</span> */}
           </a>
 
           <p className="footer__tagline">
-            Sanderick is dedicated to providing exceptional eye care for patients of all ages.
+            Sanderick Eye Care is dedicated to providing exceptional eye care for patients of all ages.
           </p>
 
           <ul className="footer__links">

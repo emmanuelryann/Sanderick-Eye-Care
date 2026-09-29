@@ -1,24 +1,24 @@
 import '../styles/Blog.css';
+import blog1 from '../assets/blog1.avif';
+import blog2 from '../assets/blog2.avif';
+import blog3 from '../assets/blog3.avif';
+import blog4 from '../assets/blog4.avif';
 
 const blogPosts = [
   {
-    image:
-      'https://images.unsplash.com/photo-1541178735493-479c1a27ed24?auto=format&fit=crop&w=600&h=550&q=80',
+    image: blog1,
     title: '5 Tips to Protect Your Eyes from Digital Strain',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&h=550&q=80',
+    image: blog2,
     title: 'Understanding Common Vision Problems',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=550&q=80',
+    image: blog3,
     title: 'The Importance of Regular Eye Exams for All Ages',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&h=550&q=80',
+    image: blog4,
     title: 'Choosing the Right Glasses or Contact Lenses for Your Lifestyle',
   },
 ];

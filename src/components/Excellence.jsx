@@ -56,7 +56,18 @@ const Excellence = () => {
               className="excellence__cta"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                const section = document.getElementById('services');
+                if (section) {
+                  const navbar = document.querySelector('.navbar');
+                  const navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
+                  const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+                  const extraGap = 1.5 * rootFontSize;
+                  const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+                  window.scrollTo({
+                    top: Math.max(0, sectionTop - navHeight - extraGap),
+                    behavior: 'smooth',
+                  });
+                }
               }}
             >
               Learn more

@@ -33,6 +33,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 100%;
+  scroll-padding-top: clamp(5rem, 4.2rem + 2vw, 6.5rem);
 }
 
 body {
@@ -90,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 .section {
   padding-top: clamp(3rem, 2.5rem + 3vw, 6rem);
   padding-bottom: clamp(3rem, 2.5rem + 3vw, 6rem);
+  scroll-margin-top: clamp(5rem, 4.2rem + 2vw, 6.5rem);
 }
 
 /* Utility */

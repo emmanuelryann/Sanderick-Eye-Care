@@ -25,7 +25,7 @@ const Contact = () => {
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
                   </div>
-                  <span className="contact__text">+1 234 567 890</span>
+                  <span className="contact__text">+223 (0) 591 7729 00</span>
                 </div>
 
                 <div className="contact__item">
@@ -35,7 +35,7 @@ const Contact = () => {
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
                   </div>
-                  <span className="contact__text">contact@youreyeclinic.com</span>
+                  <span className="contact__text">sanderickeyeclinic@gmail.com</span>
                 </div>
 
                 <div className="contact__item contact__item--hours">
@@ -47,7 +47,8 @@ const Contact = () => {
                   </div>
                   <div className="contact__hours-text">
                     <span className="contact__hours-label">Open Hours:</span>
-                    <span className="contact__hours-value">Monday - Friday, 10:00 AM - 10:00 PM (GMT)</span>
+                    <span className="contact__hours-value">Monday - Friday: 8:30 AM - 5:00 PM (GMT)</span>
+                    <span className="contact__hours-value">Saturday: 9:30 AM - 2:00 PM (GMT)</span>
                   </div>
                 </div>
               </div>
@@ -61,7 +62,7 @@ const Contact = () => {
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                   </div>
-                  <span className="contact__text">123 Vision Street, Opticville</span>
+                  <span className="contact__text">Abia Prampram, Opposite EPL Filling Station</span>
                 </div>
               </div>
             </div>

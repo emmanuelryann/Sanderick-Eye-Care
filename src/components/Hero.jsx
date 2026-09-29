@@ -1,4 +1,5 @@
 import '../styles/Hero.css';
+import heroImage from '../assets/sanderick_hero2.avif';
 
 const reviewAvatars = [
   {
@@ -32,7 +33,15 @@ const Hero = () => {
     e.preventDefault();
     const section = document.getElementById('contact');
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const navbar = document.querySelector('.navbar');
+      const navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
+      const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      const extraGap = 1.5 * rootFontSize;
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: Math.max(0, sectionTop - navHeight - extraGap),
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -40,8 +49,8 @@ const Hero = () => {
     <section className="hero" id="home">
       <img
         className="hero__bg"
-        src="https://images.unsplash.com/photo-1544435253-f0ead49638da?auto=format&fit=crop&w=2000&q=85"
-        alt="Macro close up of eyes looking directly forward"
+        src={heroImage}
+        alt="Sanderick Eye Care"
       />
       <div className="hero__overlay"></div>
 
