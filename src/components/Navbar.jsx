@@ -19,20 +19,83 @@ const Navbar = () => {
   useEffect(() => {
     if (!isOpen) return;
 
-    const preventScroll = (e) => {
-      const sidebar = document.querySelector('.navbar__sidebar');
-      if (sidebar && sidebar.contains(e.target)) {
-        return; // Allow scrolling inside the sidebar itself
+    const sidebar = document.querySelector('.navbar__sidebar');
+
+    const handleWheel = (e) => {
+      // If event happened on overlay or window, prevent completely
+      if (!sidebar || !sidebar.contains(e.target)) {
+        e.preventDefault();
+        return;
       }
-      e.preventDefault();
+
+      // If inside sidebar:
+      // If sidebar does not need to scroll, prevent default completely so home screen doesn't scroll
+      if (sidebar.scrollHeight <= sidebar.clientHeight) {
+        e.preventDefault();
+        return;
+      }
+
+      // If sidebar is scrollable, prevent chaining when reaching boundaries
+      const isScrollingDown = e.deltaY > 0;
+      const isAtTop = sidebar.scrollTop <= 0;
+      const isAtBottom = sidebar.scrollTop + sidebar.clientHeight >= sidebar.scrollHeight - 1;
+
+      if ((isScrollingDown && isAtBottom) || (!isScrollingDown && isAtTop)) {
+        e.preventDefault();
+      }
     };
 
-    window.addEventListener('wheel', preventScroll, { passive: false });
-    window.addEventListener('touchmove', preventScroll, { passive: false });
+    let touchStartY = 0;
+    const handleTouchStart = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        touchStartY = e.touches[0].clientY;
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      if (!sidebar || !sidebar.contains(e.target)) {
+        e.preventDefault();
+        return;
+      }
+
+      // If inside sidebar and content fits without scrolling, prevent default completely
+      if (sidebar.scrollHeight <= sidebar.clientHeight) {
+        e.preventDefault();
+        return;
+      }
+
+      // If scrollable, prevent chaining at top and bottom edges
+      if (e.touches && e.touches.length > 0) {
+        const currentY = e.touches[0].clientY;
+        const isSwipingDown = currentY > touchStartY; // pulling down
+        const isSwipingUp = currentY < touchStartY;   // pulling up
+        const isAtTop = sidebar.scrollTop <= 0;
+        const isAtBottom = sidebar.scrollTop + sidebar.clientHeight >= sidebar.scrollHeight - 1;
+
+        if ((isSwipingDown && isAtTop) || (isSwipingUp && isAtBottom)) {
+          e.preventDefault();
+        }
+      }
+    };
+
+    const handleKeyDown = (e) => {
+      if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(e.key)) {
+        if (!sidebar || !sidebar.contains(e.target)) {
+          e.preventDefault();
+        }
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener('wheel', preventScroll);
-      window.removeEventListener('touchmove', preventScroll);
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen]);
 
@@ -52,12 +115,25 @@ const Navbar = () => {
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     closeMenu();
+
     if (sectionId === 'home') {
+      const hero = document.getElementById('home');
+      if (hero) {
+        hero.classList.remove('reveal-visible');
+        setTimeout(() => hero.classList.add('reveal-visible'), 50);
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+
     const section = document.getElementById(sectionId);
     if (section) {
+      // Re-trigger scroll-into-view animation when clicked
+      section.classList.remove('reveal-visible');
+      setTimeout(() => {
+        section.classList.add('reveal-visible');
+      }, 150);
+
       const navbar = document.querySelector('.navbar');
       const navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
       const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
@@ -221,14 +297,14 @@ const Navbar = () => {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              <span>+1 234 567 890</span>
+              <span>+223 (0) 591 7729 00</span>
             </div>
             <div className="navbar__sidebar-info-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              <span>Mon - Fri: 10AM - 10PM</span>
+              <span>Mon - Fri: 8:30AM - 5PM</span>
             </div>
           </div>
 

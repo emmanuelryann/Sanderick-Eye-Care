@@ -5,11 +5,21 @@ const Footer = () => {
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     if (sectionId === 'home') {
+      const hero = document.getElementById('home');
+      if (hero) {
+        hero.classList.remove('reveal-visible');
+        setTimeout(() => hero.classList.add('reveal-visible'), 50);
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
     const section = document.getElementById(sectionId);
     if (section) {
+      section.classList.remove('reveal-visible');
+      setTimeout(() => {
+        section.classList.add('reveal-visible');
+      }, 150);
+
       const navbar = document.querySelector('.navbar');
       const navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
       const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;

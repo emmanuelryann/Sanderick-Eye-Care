@@ -34,6 +34,11 @@ const Hero = () => {
     e.preventDefault();
     const section = document.getElementById('contact');
     if (section) {
+      section.classList.remove('reveal-visible');
+      setTimeout(() => {
+        section.classList.add('reveal-visible');
+      }, 150);
+
       const navbar = document.querySelector('.navbar');
       const navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
       const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
