@@ -132,10 +132,12 @@
   box-shadow: 0 0.125rem 0.5rem color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
-.contact__btn--primary:hover {
-  opacity: 0.93;
-  transform: translateY(-0.0625rem);
-  box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, var(--color-primary) 35%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .contact__btn--primary:hover {
+    opacity: 0.93;
+    transform: translateY(-0.0625rem);
+    box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, var(--color-primary) 35%, transparent);
+  }
 }
 
 .contact__btn--secondary {
@@ -145,10 +147,12 @@
   font-weight: 500;
 }
 
-.contact__btn--secondary:hover {
-  background: #f9fafb;
-  border-color: #d1d5db;
-  color: var(--color-dark);
+@media (hover: hover) and (pointer: fine) {
+  .contact__btn--secondary:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    color: var(--color-dark);
+  }
 }
 
 /* Map Column */

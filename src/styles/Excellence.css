@@ -49,11 +49,12 @@
   white-space: nowrap;
   box-shadow: 0 0.125rem 0.5rem color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
-
-.excellence__cta:hover {
-  opacity: 0.93;
-  transform: translateY(-0.0625rem);
-  box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, var(--color-primary) 35%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .excellence__cta:hover {
+    opacity: 0.93;
+    transform: translateY(-0.0625rem);
+    box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, var(--color-primary) 35%, transparent);
+  }
 }
 
 /* Vertically Stacked Cards Column */

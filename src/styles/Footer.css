@@ -63,8 +63,10 @@
   transition: color 0.25s ease;
 }
 
-.footer__links a:hover {
-  color: var(--color-primary);
+@media (hover: hover) and (pointer: fine) {
+  .footer__links a:hover {
+    color: var(--color-primary);
+  }
 }
 
 /* Bottom Bar */
@@ -96,8 +98,10 @@
   transition: color 0.2s ease;
 }
 
-.footer__legal a:hover {
-  color: #4b5563;
+@media (hover: hover) and (pointer: fine) {
+  .footer__legal a:hover {
+    color: #4b5563;
+  }
 }
 
 .footer__legal-dot {

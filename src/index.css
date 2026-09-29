@@ -130,3 +130,14 @@ h1, h2, h3, h4, h5, h6 {
     transition: none;
   }
 }
+
+/* Mobile Touch Optimization */
+@media (hover: none) and (pointer: coarse) {
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -93,14 +93,19 @@
   transition: transform 0.25s ease;
 }
 
-.services__item:hover .services__arrow-btn {
-  border-color: var(--color-primary);
-  background: var(--color-primary);
-  color: var(--color-white);
+@media (hover: hover) and (pointer: fine) {
+  .services__item:hover .services__arrow-btn {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
 }
 
-.services__item:hover .services__arrow-svg {
-  transform: translate(0.0625rem, -0.0625rem);
+
+@media (hover: hover) and (pointer: fine) {
+  .services__item:hover .services__arrow-svg {
+    transform: translate(0.0625rem, -0.0625rem);
+  }
 }
 
 /* Responsive Media Queries - Layout Changes Only */

@@ -43,8 +43,10 @@
   transition: transform 0.25s ease;
 }
 
-.blog__card:hover {
-  transform: translateY(-0.0625rem);
+@media (hover: hover) and (pointer: fine) {
+  .blog__card:hover {
+    transform: translateY(-0.0625rem);
+  } 
 }
 
 .blog__image-wrapper {
@@ -63,8 +65,10 @@
   transition: transform 0.3s ease;
 }
 
-.blog__card:hover .blog__img {
-  transform: scale(1.03);
+@media (hover: hover) and (pointer: fine) {
+  .blog__card:hover .blog__img {
+    transform: scale(1.03);
+  }
 }
 
 .blog__content {
@@ -95,17 +99,21 @@
   margin-top: auto;
 }
 
-.blog__card:hover .blog__read-more {
-  opacity: 0.85;
-  gap: 0.5rem;
+@media (hover: hover) and (pointer: fine) {
+  .blog__card:hover .blog__read-more {
+    opacity: 0.85;
+    gap: 0.5rem;
+  }
 }
 
 .blog__arrow {
   transition: transform 0.2s ease;
 }
 
-.blog__card:hover .blog__arrow {
-  transform: translateX(0.125rem);
+@media (hover: hover) and (pointer: fine) {
+  .blog__card:hover .blog__arrow {
+    transform: translateX(0.125rem);
+  }
 }
 
 /* Explore More Articles Button */
@@ -126,10 +134,14 @@
   transition: all 0.25s ease;
 }
 
-.blog__explore-btn:hover {
-  background: #000;
-  /* border-color: #d1d5db; */
-  color: #fff;
+@media (hover: hover) and (pointer: fine) {
+  .blog__explore-btn:hover {
+    /* background: #000; */
+    /* border-color: #d1d5db; */
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+  }
 }
 
 /* Responsive Media Queries - Layout Changes Only */
