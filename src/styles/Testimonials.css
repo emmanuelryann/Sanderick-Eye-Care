@@ -96,7 +96,7 @@
   min-width: min(85vw, 18rem);
   background: #f9fafb;
   border: 0.0625rem solid #f3f4f6;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   padding: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
   display: flex;
   flex-direction: column;

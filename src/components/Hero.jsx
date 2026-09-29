@@ -1,5 +1,6 @@
 import '../styles/Hero.css';
 import heroImage from '../assets/sanderick_hero2.avif';
+import heroMobileImage from '../assets/sanderick_hero4.jpg';
 
 const reviewAvatars = [
   {
@@ -47,11 +48,14 @@ const Hero = () => {
 
   return (
     <section className="hero" id="home">
-      <img
-        className="hero__bg"
-        src={heroImage}
-        alt="Sanderick Eye Care"
-      />
+      <picture className="hero__picture">
+        <source media="(max-width: 48rem)" srcSet={heroMobileImage} />
+        <img
+          className="hero__bg"
+          src={heroImage}
+          alt="Sanderick Eye Care"
+        />
+      </picture>
       <div className="hero__overlay"></div>
 
       <div className="hero__content">

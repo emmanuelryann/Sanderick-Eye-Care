@@ -16,11 +16,14 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isOpen) {
+      document.documentElement.classList.add('no-scroll');
       document.body.classList.add('no-scroll');
     } else {
+      document.documentElement.classList.remove('no-scroll');
       document.body.classList.remove('no-scroll');
     }
     return () => {
+      document.documentElement.classList.remove('no-scroll');
       document.body.classList.remove('no-scroll');
     };
   }, [isOpen]);
@@ -156,41 +159,92 @@ const Navbar = () => {
       <div
         className={`navbar__overlay ${isOpen ? 'active' : ''}`}
         onClick={closeMenu}
+        onTouchMove={(e) => e.preventDefault()}
         aria-hidden="true"
       ></div>
 
       {/* Mobile Side Navbar */}
-      <aside className={`navbar__sidebar ${isOpen ? 'active' : ''}`}>
+      <aside className={`navbar__sidebar ${isOpen ? 'active' : ''}`} aria-label="Mobile Navigation">
         <div className="navbar__sidebar-header">
-          <div className="navbar__sidebar-logo">
-            <img src={logo} className="navbar__sidebar-logo-img" alt="Sanderick Eye Care" />
+          <div className="navbar__sidebar-title-group">
+            <span className="navbar__sidebar-badge">Navigation</span>
+            <span className="navbar__sidebar-title">Sanderick Eye Care</span>
           </div>
           <button
             className="navbar__sidebar-close"
             onClick={closeMenu}
             aria-label="Close navigation menu"
           >
-            ✕
+            <svg
+              className="navbar__sidebar-close-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
         </div>
 
-        <ul className="navbar__sidebar-links">
-          {allNavLinks.map((link) => (
-            <li key={link.id}>
-              <a href={`#${link.id}`} onClick={(e) => handleNavClick(e, link.id)}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <nav className="navbar__sidebar-nav">
+          <ul className="navbar__sidebar-links">
+            {allNavLinks.map((link, index) => (
+              <li key={link.id} className="navbar__sidebar-item">
+                <a
+                  href={`#${link.id}`}
+                  className="navbar__sidebar-link"
+                  onClick={(e) => handleNavClick(e, link.id)}
+                >
+                  <span className="navbar__sidebar-link-num">0{index + 1}</span>
+                  <span className="navbar__sidebar-link-text">{link.label}</span>
+                  <svg
+                    className="navbar__sidebar-link-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="navbar__sidebar-footer">
+          <div className="navbar__sidebar-info">
+            <div className="navbar__sidebar-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>+1 234 567 890</span>
+            </div>
+            <div className="navbar__sidebar-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>Mon - Fri: 10AM - 10PM</span>
+            </div>
+          </div>
+
           <a
             href="#contact"
             className="navbar__cta navbar__cta--sidebar"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
-            Book a schedule
+            <span>Book a schedule</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </aside>
