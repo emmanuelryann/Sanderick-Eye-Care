@@ -6,7 +6,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
+    if (e) e.preventDefault();
     setIsOpen((prev) => !prev);
   };
 
@@ -14,17 +15,24 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  // Prevent background scrolling while the mobile sidebar is open without jumping to the top
   useEffect(() => {
-    if (isOpen) {
-      document.documentElement.classList.add('no-scroll');
-      document.body.classList.add('no-scroll');
-    } else {
-      document.documentElement.classList.remove('no-scroll');
-      document.body.classList.remove('no-scroll');
-    }
+    if (!isOpen) return;
+
+    const preventScroll = (e) => {
+      const sidebar = document.querySelector('.navbar__sidebar');
+      if (sidebar && sidebar.contains(e.target)) {
+        return; // Allow scrolling inside the sidebar itself
+      }
+      e.preventDefault();
+    };
+
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    window.addEventListener('touchmove', preventScroll, { passive: false });
+
     return () => {
-      document.documentElement.classList.remove('no-scroll');
-      document.body.classList.remove('no-scroll');
+      window.removeEventListener('wheel', preventScroll);
+      window.removeEventListener('touchmove', preventScroll);
     };
   }, [isOpen]);
 
@@ -144,6 +152,7 @@ const Navbar = () => {
           </a>
 
           <button
+            type="button"
             className={`navbar__hamburger ${isOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
@@ -167,10 +176,10 @@ const Navbar = () => {
       <aside className={`navbar__sidebar ${isOpen ? 'active' : ''}`} aria-label="Mobile Navigation">
         <div className="navbar__sidebar-header">
           <div className="navbar__sidebar-title-group">
-            <span className="navbar__sidebar-badge">Navigation</span>
             <span className="navbar__sidebar-title">Sanderick Eye Care</span>
           </div>
           <button
+            type="button"
             className="navbar__sidebar-close"
             onClick={closeMenu}
             aria-label="Close navigation menu"
@@ -192,26 +201,14 @@ const Navbar = () => {
 
         <nav className="navbar__sidebar-nav">
           <ul className="navbar__sidebar-links">
-            {allNavLinks.map((link, index) => (
+            {allNavLinks.map((link) => (
               <li key={link.id} className="navbar__sidebar-item">
                 <a
                   href={`#${link.id}`}
                   className="navbar__sidebar-link"
                   onClick={(e) => handleNavClick(e, link.id)}
                 >
-                  <span className="navbar__sidebar-link-num">0{index + 1}</span>
-                  <span className="navbar__sidebar-link-text">{link.label}</span>
-                  <svg
-                    className="navbar__sidebar-link-arrow"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
+                  {link.label}
                 </a>
               </li>
             ))}
